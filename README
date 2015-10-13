@@ -1,0 +1,21 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=5256
+
+FOR MORE INFO: please visit https://github.com/MikeCoder/markdown-preview.vim
+
+Usage
+
+    edit your markdown doc normally
+    when you want to preview it in html you just use :MarkdownPreview defult to show your doc in your browser
+    if you want to change your style. you just use :MarkdownPreview GitHub in github style markdown view
+    you can also use map <leader>m :MarkdownPreview GitHub to have more fun
+
+Custom
+
+this theme is in the css folder, if you want to change it to your favorite theme. follow the steps:
+
+    go into your .vim folder
+    find MarkDownRes folder and you will find default.css and GitHub.css here
+    add your custom css file here, such as exmaple.css
+    use vim open your markdown doc and :MarkdownPreview example
+    and you will see your doc preview in your browser with example.css
+
