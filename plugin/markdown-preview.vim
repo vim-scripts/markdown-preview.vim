@@ -40,10 +40,17 @@ if empty(glob('~/.vim/MarkDownCSS/default.css'))
     call MarkdownPreviewInit()
 endif
 
-function! MarkdownPreview(args1)
+function! MarkdownPreviewWithCustomCodeStyle(args1, args2)
 python << EOF
 import markdown_preview
-markdown_preview.markdownPreview()
+markdown_preview.markdownPreviewWithCustomCodeStyle()
+EOF
+endfunction
+
+function! MarkdownPreviewWithDefaultCodeStyle(args1)
+python << EOF
+import markdown_preview
+markdown_preview.markdownPreviewWithDefaultCodeStyle()
 EOF
 endfunction
 
@@ -55,12 +62,24 @@ os.remove(os.path.join(currentpath, 'tmp.html'))
 EOF
 endfunction
 
-function! Preview(args1)
-call MarkdownPreview(a:args1)
-!read ENTER
-call ClearAll()
+function! PreviewWithDefaultCodeStyle(args1)
+    call MarkdownPreviewWithDefaultCodeStyle(a:args1)
+    !read ENTER
+    call ClearAll()
 endfunction
 
-command! -nargs=1 MarkdownPreview :call Preview(<f-args>)
+function! PreviewWithCustomCodeStyle(args1, args2)
+    call MarkdownPreviewWithCustomCodeStyle(a:args1, a:args2)
+    !read ENTER
+    call ClearAll()
+endfunction
+
+if !exists(':MarkdownPreview')
+    command -nargs=1 MarkdownPreview :call PreviewWithDefaultCodeStyle(<f-args>)
+endif
+
+if !exists(':MarkdownPreviewWithCustomCodeStyle')
+    command -nargs=* MarkdownPreviewWithCustomCodeStyleCodeStyle call PreviewWithCustomCodeStyle(<f-args>)
+endif
 
 map <leader>m :MarkdownPreview GitHub<CR>

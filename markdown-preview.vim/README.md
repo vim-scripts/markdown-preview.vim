@@ -1,9 +1,14 @@
 VIM Markdown Preview
 ---
 
-**PS: [*中文文档版本*](http://mikecoder.cn/?post=131)**
-
 Yet another vim markdown preview plugin.
+
+####Why you need this
+1. It's easy to install with vundle or bundle
+2. No complex config steps
+3. **Code Hightlight**
+4. Easy to custom your own css style
+5. Code custom style hightlight(using [hightlight.js](https://highlightjs.org/))
 
 ####Installing
 
@@ -16,7 +21,7 @@ Yet another vim markdown preview plugin.
 4. then use **PluginInstall** to install the plugin
 
 
-##### Recommand:k-vim
+##### Recommand:[k-vim](https://github.com/wklken/k-vim)
 1. add **Bundle 'MikeCoder/markdown-preview.vim'** to your **vimrc.bundle** file
 2. and exec **BundleInstall** to install the plugin
 
@@ -27,10 +32,11 @@ Yet another vim markdown preview plugin.
 3. use **git clone https://github.com/MikeCoder/markdown-preview.vim.git .**
 4. use **mv markdown-preview.vim/* . && rm -rf markdown-preview.vim**
 5. use **cp resources MarkDownRes** to copy the resources
-6. then you can open your vim and type **MarkdownPreview Github** to check whether it is ok
+6. then you can open your vim and type **:MarkdownPreview Github** to check whether it is ok
 
 ####Usage
 
+#####Commen Usage
 1. edit your markdown doc normally
 2. when you want to preview it in html you just use **:MarkdownPreview defult** to show your doc in your browser
 3. if you want to change your style. you just use **:MarkdownPreview GitHub** in github style markdown view
@@ -39,12 +45,30 @@ Yet another vim markdown preview plugin.
 map <leader>m :MarkdownPreview GitHub<CR>
 ```
 
+#####Advanced Usage
+1. use **:MarkdownPreviewWithCustomCodeStyle css-style code-style** instead
+2. you can use custom css style and code hightlight style
+3. the following code styles are you can use:
+    + github
+    + solarized_dark
+    + solarized_light
+    + default
+    + color-brewer
+    + railscasts
+    + tomorrow
+    + zenburn
+    + mono
+    + monokai_sublime
+4. these code css files are in your **~/.vim/MarkDownRes/code-styles** folder
+5. for example, when you use **:MarkdownPreviewWithCustomCodeStyleCodeStyle Github zenburn**, when edit the [TEST.md](./TEST.md)
+    ![code hightlight example](./images/code-style.png)
+
 ####Custom
 this theme is in the css folder, if you want to change it to your favorite theme. follow the steps:
 
 - go into your .vim folder
 - find **MarkDownRes** folder and you will find default.css and GitHub.css here
-- add your custom css file here, such as **exmaple.css**
+- add your custom css file here, such as **example.css**
 - use vim open your markdown doc and **:MarkdownPreview example**
 - and you will see your doc preview in your browser with example.css
 
@@ -54,12 +78,6 @@ this theme is in the css folder, if you want to change it to your favorite theme
 
 ####TODO
 see [@TODO.md](https://github.com/MikeCoder/markdown-preview.vim/blob/master/TODO.md)
-
-
-####EXAMPLE
-![Test Image](./images/image-test.png)
-
-![Test Code](./images/code-test.png)
 
 ####LAST
 wish you have a nice day

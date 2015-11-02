@@ -2,6 +2,15 @@ This is a mirror of http://www.vim.org/scripts/script.php?script_id=5256
 
 FOR MORE INFO: please visit https://github.com/MikeCoder/markdown-preview.vim
 
+Why you need this
+
+    It's easy to install with vundle or bundle
+    No complex config steps
+    Code Hightlight
+    Easy to custom your own css style
+    TODO: Code custom style hightlight
+
+
 Usage
 
     edit your markdown doc normally
@@ -19,3 +28,20 @@ this theme is in the css folder, if you want to change it to your favorite theme
     use vim open your markdown doc and :MarkdownPreview example
     and you will see your doc preview in your browser with example.css
 
+Advanced Usage
+
+    use :MarkdownPreviewWithCustomCodeStyle css-style code-style instead
+    you can use custom css style and code hightlight style
+    the following code styles are you can use:
+        github
+        solarized_dark
+        solarized_light
+        default
+        color-brewer
+        railscasts
+        tomorrow
+        zenburn
+        mono
+        monokai_sublime
+    these code css files are in your ~/.vim/MarkDownRes/code-styles folder
+    for example, you use :MarkdownPreviewWithCustomCodeStyleCodeStyle Github zenburn, when edit the TEST.md
